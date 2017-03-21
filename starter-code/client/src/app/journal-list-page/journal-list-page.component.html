@@ -1,0 +1,14 @@
+<h1> Journal Details Page</h1>
+
+<div class = "errorMessage" *ngIf = "errorMessage">
+  {{ errorMessage }}
+</div>
+
+<div class="journalList">
+  <div class="journal-container" *ngFor = "let oneJournal of journals">
+    <p> {{oneJournal.date}} </p>
+    <p class="title"> {{oneJournal.title}} </p>
+    <p> {{oneJournal.content}} </p>
+    <a [routerLink] ="['journal', oneJournal._id ]"> Details </a>
+  </div>
+</div>

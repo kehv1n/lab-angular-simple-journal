@@ -1,0 +1,17 @@
+<h2> Journal Details </h2>
+
+<a routerLink = "/"> Back Home </a>
+
+<div class="journal-container" *ngIf = "journal">
+  <div>
+    <h3>
+      {{ journal. title}}
+    </h3>
+    <p>
+      {{journal.content}}
+    </p>
+    <p>
+      {{ journal.date }}
+    </p>
+  </div>
+</div>

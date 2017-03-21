@@ -6,8 +6,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser   = require('body-parser');
 const layouts      = require('express-ejs-layouts');
 const mongoose     = require('mongoose');
+const cors         = require('cors');
 
-mongoose.connect('mongodb://localhost/journal-development');
+mongoose.connect('mongodb://localhost/lab-angular-simple-journal');
 
 const app = express();
 
@@ -26,9 +27,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
+app.use(cors());
 
+////////ROUTES GO HERE ///////////
 const index = require('./routes/index');
 app.use('/', index);
+
+const journalApi = require('./routes/api/journal-entries.js');
+app.use('/api', journalApi);
+////////ROUTES GO HERE ///////////
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

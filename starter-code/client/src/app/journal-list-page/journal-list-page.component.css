@@ -1,0 +1,20 @@
+.journal-container{
+  border: 6px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+  word-spacing: 2px;
+}
+h1 {
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-weight: 100;
+  text-align: center;
+  margin: 20px 0;
+}
+.title {
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
